@@ -7,8 +7,15 @@ body{
     margin: 0;
 }
 
+/* color scheme variables */
+:root {
+    --lighterorange: rgb(255, 211, 149);
+    --darkerorange: rgb(255, 175, 105);
+    --yellow_on_white: rgb(255, 237, 164);
+}
+
 .topbanner{
-    background-color: rgb(255, 211, 149);
+    background-color: var(--lighterorange);
     height: 70px;
     padding: 0px 30px;
     display: flex;
@@ -36,7 +43,7 @@ body{
 }
 
 .topbar_right{
-    background-color: transpa;
+    background-color: transparent;
     width: 48%;
     margin: 0;
     display: flex;
@@ -103,7 +110,7 @@ body{
 
 .line_under_banner{
     height: 2vh;
-    background-color: rgb(255, 175, 105);
+    background-color: var(--darkerorange);
     position: sticky;
     top: 70px;
     z-index: 1;
@@ -129,7 +136,7 @@ main{
 }
 
 .welcomeblurb{
-    background-color: rgb(255, 237, 164);
+    background-color: var(--yellow_on_white);
     width: 85%;
     padding: 1%;
     margin: 50px;
@@ -193,6 +200,13 @@ h2{
 .recipebutton{
     width: 30%;
     text-decoration:none;
+    animation: dropOut 0.15s;
+    filter: drop-shadow(10px 20px 10px white);
+}
+
+.recipebutton:hover{
+    animation: dropIn 0.15s;
+    filter: drop-shadow(10px 20px 10px rgb(180, 180, 180));
 }
 
 .recipebutton_image{
@@ -200,6 +214,28 @@ h2{
     width: 100%;
     height: auto;
 }
+
+/* DROP SHADOW UNDER FEATURED RECIPE BUTTONS */
+@keyframes dropIn {
+    from {
+        filter: drop-shadow(10px 20px 10px white);
+    }
+
+    to {
+        filter: drop-shadow(10px 20px 10px rgb(180, 180, 180));
+    }
+}
+
+@keyframes dropOut {
+    from {
+        filter: drop-shadow(10px 20px 10px rgb(180, 180, 180));
+    }
+
+    to {
+        filter: drop-shadow(10px 20px 10px white);
+    }
+}
+
 
 h3{
     font-size: 30px;
@@ -215,7 +251,7 @@ h3{
 
 footer{
     height:15vh;
-    background-color: rgb(255, 175, 105);
+    background-color: var(--darkerorange);
 }
 
 
